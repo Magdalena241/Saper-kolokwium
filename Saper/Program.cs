@@ -16,7 +16,10 @@ namespace Saper
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            View.IView view = new View.View();
+            Model.IModel model = new Model.Model();
+            Presenter.Presenter presenter = new Presenter.Presenter(view, model);
+            presenter.Run();
         }
     }
 }
